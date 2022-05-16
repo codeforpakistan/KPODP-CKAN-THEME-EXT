@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <hgroup class="{{ g.header_class }} navbar-left">
       {% block header_logo %} {% if g.site_logo %}
-      <a class="logo" href="{{ h.url_for('home.index') }}"><img style="height:100px!important" src="/img/opendata-logo-white.svg" srcset="" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+      <a class="logo" href="{{ h.url_for('home.index') }}"><img style="height:100px!important" src="/images/Logo.svg" srcset="" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
       {% else %}
       <h1>
         
@@ -110,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </ul>
       </nav>
       {% endblock %} {% block header_site_search %}
-      <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
+      <form class="section site-search simple-input" action="{% url_for controller='dataset', action='search' %}" method="get">
         <div class="field">
           <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
           <input id="field-sitewide-search" type="text" class="form-control" name="q"/>

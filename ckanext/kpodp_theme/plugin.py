@@ -1,11 +1,11 @@
 from collections import OrderedDict
 
-from pylons import config
+from ckan.common import config
 
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as tk
 
-from ckan.lib.activity_streams import activity_stream_string_functions as activity_streams
+# from ckan.lib.activity_streams import activity_stream_string_functions as activity_streams
 
 
 def most_recent_datasets(num=3):
@@ -52,27 +52,27 @@ def ckan_site_url():
 
 
 # monkeypatch activity streams to rename 'group' to 'topic'
-activity_streams['changed group'] = (
-    lambda c, a: tk._("{actor} updated the topic {group}")
-)
-activity_streams['deleted group'] = (
-    lambda c, a: tk._("{actor} deleted the topic {group}")
-)
-activity_streams['new group'] = (
-    lambda c, a: tk._("{actor} created the topic {group}")
-)
+# activity_streams['changed group'] = (
+#     lambda c, a: tk._("{actor} updated the topic {group}")
+# )
+# activity_streams['deleted group'] = (
+#     lambda c, a: tk._("{actor} deleted the topic {group}")
+# )
+# activity_streams['new group'] = (
+#     lambda c, a: tk._("{actor} created the topic {group}")
+# )
 
-# Add back activity types removed in the 'related'->'showcase' upgrade.
-# They'll be generic, but at least they won't crash.
-activity_streams['changed related item'] = (
-    lambda c, a: tk._("{actor} updated a related item.")
-)
-activity_streams['deleted related item'] = (
-    lambda c, a: tk._("{actor} deleted a related item.")
-)
-activity_streams['new related item'] = (
-    lambda c, a: tk._("{actor} created a related item.")
-)
+# # Add back activity types removed in the 'related'->'showcase' upgrade.
+# # They'll be generic, but at least they won't crash.
+# activity_streams['changed related item'] = (
+#     lambda c, a: tk._("{actor} updated a related item.")
+# )
+# activity_streams['deleted related item'] = (
+#     lambda c, a: tk._("{actor} deleted a related item.")
+# )
+# activity_streams['new related item'] = (
+#     lambda c, a: tk._("{actor} created a related item.")
+# )
 
 
 class KPODPThemePlugin(plugins.SingletonPlugin):

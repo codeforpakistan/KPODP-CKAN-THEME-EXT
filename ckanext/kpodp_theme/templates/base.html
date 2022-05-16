@@ -1,9 +1,10 @@
 {% ckan_extends %}
 
+{% block scripts %}
+  {{ super() }}
+  {% asset 'kpodp_theme/ext_script' %}
+{% endblock scripts %}
 {% block styles %}
   {{ super() }}
-  <link rel="stylesheet" href="/css/main.css" />
-  <link href='//fonts.googleapis.com/css?family=Lato:400italic,400,900' rel='stylesheet' type='text/css'>
-  {% resource 'kpodp_theme/favorite.js' %}
-
-{% endblock %}
+  {% asset 'kpodp_theme/ext_style' %}
+{% endblock styles %}
