@@ -2,7 +2,16 @@
 @import "partials/_carousel";
 
 body {
-  background: $primary-color none;
+  background: rgba($color: $primary-color, $alpha: 0.0);
+  
+  background-image: url("/images/mask-group-1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-feature-settings: "kern" 1;
@@ -13,6 +22,9 @@ body {
   font-family: $font;
   color: $text-color;
   line-height: $text-line-height;
+  // background-position: center;
+  background-repeat: no-repeat;
+  // background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,7 +76,7 @@ a {
 }
 
 .browse-topic-title {
-  color: $primary-color;
+  color: $text-color;
 }
 
 .box, .wrapper, .btn, .label, .media-view:hover, .media-view.hovered, .media-view {
@@ -77,7 +89,9 @@ a {
   text-shadow: none;
   box-shadow: none;
 }
-
+.box {
+  background-color: $primary-color !important;
+}
 input, textarea, select {
   font-family: $font;
 }
@@ -89,7 +103,7 @@ input, textarea, select {
 
 .masthead {
   padding: 6px;
-  background: $primary-color none;
+  background: rgba($color: $primary-color, $alpha: 0.0);
 }
 
 .masthead input[type="text"] {
@@ -291,6 +305,7 @@ label {
 
 .browse-heading {
   margin-bottom: 28px;
+  color: $secondary-text-color;
 }
 
 .homepage .module-search .module-content .heading {
@@ -307,7 +322,19 @@ label {
 }
 
 .main-browse {
-  background-color: #fff;
+  background-color: $primary-color;
+}
+
+.main-data-strategy {
+  background-color: $gray-lightest;
+}
+
+.data-strategy-heading {
+  margin-bottom: 28px;
+  color: $primary-color;
+}
+.data-strategy-topic-title {
+  color: $text-color;
 }
 
 .main-featured {
@@ -345,10 +372,18 @@ label {
 }
 
 .hero-text {
-  color: #fff;
+  color: $primary-color;
+}
+.hero-text-heading {
+  font-weight: 200;
+  font-size: $heading-size-h0;
+  @media(max-width: 768px){
+    font-size: $heading-size-h1;
+  }
+  
 }
 
-.hero-text-heading {
+.secondary-hero-text-heading {
   font-size: $heading-size-h0;
   @media(max-width: 768px){
     font-size: $heading-size-h1;
@@ -357,7 +392,8 @@ label {
 }
 
 .hero-text-description {
-  font-size: $heading-size-h3;
+  font-size: $heading-size-h4;
+  color: $tertiary-color;
 }
 
 .featured-heading {
@@ -408,7 +444,7 @@ label {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 700px;
   margin-top: 16px;
 }
 
@@ -480,4 +516,90 @@ img {
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.masthead .nav > li > a, .masthead .nav > li > a:focus, .masthead .nav > li > a:hover, .masthead .nav > .active > a, .masthead .nav > .active > a:hover, .masthead .nav > .active > a:focus {
+  color: $text-color;
+  text-shadow: none;
+}
+
+.simple-input .field .btn-search, .masthead input[type="text"] {
+  color: $text-color !important;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  width: 115px !important;
+  height: 115px !important;
+  padding-top: 10%;
+  margin: auto;
+  display: block;
+}
+
+.thumbnail > img {
+  max-width: 65px !important;
+  max-height: 65px !important;
+}
+
+.button-white {
+  background-color: $gray-lightest;
+  border-radius: 10px;
+  border: none;
+  color: $primary-color;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button-green {
+  background-color: $primary-color;
+  border-radius: 10px;
+  border: none;
+  color: $secondary-text-color;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.wrapper {
+  background-color: rgba($color: $primary-color, $alpha: 0.0);
+}
+.wrapper::before {
+  border-right: 0px;
+}
+.row.wrapper {
+  border-radius: 10px !important;
+}
+
+.row.wrapper > .secondary {
+  padding-right: 40px !important;
+}
+
+aside > .filters, .primary > .module {
+  background-color: #fff;
+}
+
+.primary > .module {
+  border-radius: 10px !important;
+}
+
+.module-heading {
+  border-radius: 10px !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-top-width: 0;
+  background-color: $primary-color;
+  color: $secondary-text-color;
+}
+
+.search-form > h1 {
+  color: $text-color;
 }

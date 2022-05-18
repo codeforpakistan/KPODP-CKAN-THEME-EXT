@@ -10,20 +10,19 @@ import ckan.plugins.toolkit as tk
 
 def most_recent_datasets(num=3):
     """Return a list of recent datasets."""
-    datasets = tk.get_action('package_search')({}, {'sort': 'metadata_modified desc',
-                                                    'fq': 'private:false',
-                                                    'rows': num})
+    datasets = tk.get_action('package_search')({}, {
+        'sort': 'metadata_modified desc',
+        'fq': 'private:false',
+        'rows': num
+    })
     return datasets.get('results', [])
 
 
 def most_popular_groups():
     '''Return a sorted list of the groups with the most datasets.'''
-
     # Get a list of all the site's groups from KP OpenData Portal, sorted by number of
     # datasets.
-    groups = tk.get_action('group_list')(
-        data_dict={'sort': 'package_count desc', 'all_fields': True})
-
+    groups = tk.get_action('group_list')(data_dict={'sort': 'package_count desc', 'all_fields': True})
     # Truncate the list to the 5 most popular groups only.
     groups = groups[:5]
 
@@ -32,24 +31,19 @@ def most_popular_groups():
 
 def dataset_count():
     """Return a count of all datasets"""
-
     result = tk.get_action('package_search')({}, {'rows': 1})
     return result['count']
 
 
 def groups():
     """Return a list of groups"""
-
     return tk.get_action('group_list')({}, {'all_fields': True})
-
 
 # def package_showcase_list(context):
 #     return tk.get_action('ckanext_package_showcase_list')({}, {'package_id': context.pkg_dict['id']})
 
-
 def ckan_site_url():
     return config.get('ckan.site_url', '').rstrip('/')
-
 
 # monkeypatch activity streams to rename 'group' to 'topic'
 # activity_streams['changed group'] = (
@@ -74,11 +68,8 @@ def ckan_site_url():
 #     lambda c, a: tk._("{actor} created a related item.")
 # )
 
-
 class KPODPThemePlugin(plugins.SingletonPlugin):
-    """OpenDataPhilly theme plugin.
-
-    """
+    """OpenDataPhilly theme plugin."""
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)

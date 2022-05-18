@@ -39,53 +39,33 @@ border-top-color: #00acd6;
   <div role="main" class="hero inner">
     <div class="container">
       <div class="row row1">
-        <div class="col-md-6 col1">
+        <div class="col-md-8 col-md-offset-2">
           <div class="module-content">
-            <h1 class="hero-text-heading hero-text">Your Source for Open Data in Khyber Pakhtunkhwa, Pakistan</h1>
-            <p class="hero-text-description hero-text">
-              Here you will find data, tools and resources to conduct research, develop web and mobile applications, design data visualizations, and much more!
-  
+            <h1 class="hero-text hero-text-heading">Find Your</h1>
+            <h1 class="hero-text secondary-hero-text-heading">Desired Dataset</h1>
+            <p class="hero-text-description">
+              Find all the datasets under one portal. Over {{ h.kpodp_theme_dataset_count() }} datasets from all over the Khyber Pakhtunkhwa.
             </p>
           </div>
         </div>
-        <div class="col-md-5 col1 hidden-sm hidden-xs">
-          <div class="carousel-controls">
-            <a class="carousel-control left" href="#vizcarousel" data-slide="prev"><img src="/img/larrow.svg"></a>
-            <a class="carousel-control right" href="#vizcarousel" data-slide="next"><img src="/img/rarrow.svg"></a>
-          </div>
-          <div id="vizcarousel" class="carousel">
-            <div class="spinner"></div>
-            <div class="carousel-inner">
-              <div class="active item in" data-url="/render/viz-partial-efficiency" data-slide-number="0"></div>
-              <div class="item ddd" data-url="/render/viz-partial-grounded"></div>
-              <div class="item" data-url="/render/viz-partial-crime"></div>
-              <div class="item" data-url="/render/viz-partial-landinventory"></div>
-              <div class="item" data-url="/render/viz-partial-generalfund"></div>
-              <div class="item" data-url="/render/viz-partial-burglaries"></div>
-              <div class="item" data-url="/render/viz-partial-schoolbudget"></div>
-              
-              <div class="item" data-url="/render/viz-partial-science"></div>
+        <div class="col-md-8 col-md-offset-2">
+          {% snippet 'home/snippets/search.html' %}
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="col-md-2 col-md-offset-1 text-center">
+              <h1 class="hero-text secondary-hero-text-heading">1234</h1>
+              <p class="hero-text-description">DATASETS</p>
+            </div>
+            <div class="col-md-2 col-md-offset-2 text-center">
+              <h1 class="hero-text secondary-hero-text-heading">1234</h1>
+              <p class="hero-text-description">DATASETS</p>
+            </div>
+            <div class="col-md-2 col-md-offset-2 text-center">
+              <h1 class="hero-text secondary-hero-text-heading">1234</h1>
+              <p class="hero-text-description">DATASETS</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div role="main" class="main-search">
-  <div class="container">
-    <div class="row row1">
-      <div class="col-md-6 col1">
-        {% snippet 'home/snippets/search.html' %}
-      </div>
-      <div class="col-md-5 col-md-offset-1">
-        <div class="module-content box getstarted">
-          <p>
-            Get started by searching the
-            <b class="badge">{{ h.kpodp_theme_dataset_count() }}</b>
-            datasets that cover all dimensions of KP, from city council districts to park locations.
-
-          </p>
         </div>
       </div>
     </div>
@@ -96,16 +76,19 @@ border-top-color: #00acd6;
     <div class="row row2">
       <div class="col-md-12 col1">
         <div class="module-content box">
-          <h1 class="browse-heading">Browse by Topic</h1>
+          <h1 class="browse-heading text-center" style="margin-top: 80px; margin-bottom: 80px;">CATALOGUE</h1>
           <div>
               {% for topic in h.kpodp_theme_groups() %}
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                <a href="/group/{{ topic.name }}" class=" kp-odp-tooltip browse-topic" data-toggle="dataset-tooltip" title="{{ topic.package_count }} Datasets">
-                    <img class="browse-topic-image" src="{{ topic.image_display_url or '/img/icons-document.svg' }}">
-                  <div class="browse-topic-title">
-                    {{ topic.display_name }}
-                    <!-- <span class="group_count_badge badge">{{ topic.package_count }}</span> -->
-
+                <a href="/group/{{ topic.name }}" class=" kp-odp-tooltip browse-topic thumbnail center-block" data-toggle="dataset-tooltip" title="{{ topic.package_count }} Datasets">
+                  <img class="browse-topic-image" src="{{ topic.image_display_url or '/img/icons-document.svg' }}">
+                </a>
+                <a href="/group/{{ topic.name }}" class=" kp-odp-tooltip browse-topic center-block" data-toggle="dataset-tooltip" title="{{ topic.package_count }} Datasets"></a>
+                  <div class="browse-topic-title text-center">
+                    <strong>{{ topic.display_name }}</strong>
+                  </div>
+                  <div class="browse-topic-count text-center" style="font-weight: 100;">
+                    ({{ topic.package_count }})
                   </div>
                 </a>
                 </div>
@@ -113,16 +96,39 @@ border-top-color: #00acd6;
           </div>
         </div>
       </div>
+      <div class="col-md-12 col1 text-center" style="margin: 60px 0px 60px 0px;">
+        <a href="#" class="button-white">View All Datasets</a>
+      </div>
     </div>
   </div>
 </div>
-<div role="main" class="main-updates">
+<!-- <div role="main" class="main-updates">
   <div class="container">
     <div class="row row2">
       <div class="col-md-6 col1">
         {% snippet 'home/snippets/latest_datasets.html' %}
       </div>
-      <!-- second col -->
+    </div>
+  </div>
+</div> -->
+<div role="main" class="main-data-strategy">
+  <div class="container">
+    <div class="row featurette">
+      <div class="col-md-12">
+        <h1 class=".data-strategy-heading text-center">OPEN GOVERNMENT DATA STRATEGY</h1>
+      </div>
+      <div class="col-md-7 col-md-push-5">
+        <ul>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla at dolorum expedita, aspernatur debitis quos error commodi a omnis cumque doloremque necessitatibus mollitia nihil.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla at dolorum expedita, aspernatur debitis quos error commodi a omnis cumque doloremque necessitatibus mollitia nihil.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla at dolorum expedita, aspernatur debitis quos error commodi a omnis cumque doloremque necessitatibus mollitia nihil.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla at dolorum expedita, aspernatur debitis quos error commodi a omnis cumque doloremque necessitatibus mollitia nihil.</li>
+        </ul>
+        <a href="#" class="button-green">Open Government Data Strategy Download Here</a>
+      </div>
+      <div class="col-md-5 col-md-pull-7">
+        <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="/images/data-strategy.svg" data-holder-rendered="true">
+      </div>
     </div>
   </div>
 </div>
