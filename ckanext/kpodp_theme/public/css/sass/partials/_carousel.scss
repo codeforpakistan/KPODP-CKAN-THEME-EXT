@@ -12,6 +12,7 @@
     -moz-border-radius: 100%;
     border-radius: 100%;
     overflow: hidden;
+    mask-image: radial-gradient(circle, white, black);
     -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
     position: absolute;
     opacity: 0;

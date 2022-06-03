@@ -250,7 +250,7 @@ h2.module-heading {
 
 .search-form .search-input.search-giant input {
   padding: 15px 15px 15px 40px;
-  border: $tertiary-color 2px solid;
+  border: $primary-color 2px solid;
 }
 
 .homepage .module-search {
@@ -462,8 +462,8 @@ label {
   border-bottom: 1px solid #dddddd;
 }
 
-.main-updates .module-content {
-  background-color: transparent;
+.main-updates, .main-updates .module-content {
+  background-color: $secondary-headings-color !important;
 }
 
 .media-item {

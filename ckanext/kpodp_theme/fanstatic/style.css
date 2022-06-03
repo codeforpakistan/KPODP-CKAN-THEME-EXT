@@ -13,6 +13,7 @@
   -moz-border-radius: 100%;
   border-radius: 100%;
   overflow: hidden;
+  mask-image: radial-gradient(circle, white, black);
   -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
   position: absolute;
   opacity: 0;
@@ -335,7 +336,7 @@ h2.module-heading > i {
 
 .search-form .search-input.search-giant input {
   padding: 15px 15px 15px 40px;
-  border: #9E9FAA 2px solid;
+  border: #00A990 2px solid;
 }
 
 .homepage .module-search {
@@ -550,8 +551,8 @@ label {
   border-bottom: 1px solid #dddddd;
 }
 
-.main-updates .module-content {
-  background-color: transparent;
+.main-updates, .main-updates .module-content {
+  background-color: #fff !important;
 }
 
 .media-item {
