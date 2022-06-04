@@ -1,10 +1,13 @@
 {% set latest_datasets = h.kpodp_theme_most_recent_datasets() %}
 
   <div class="module-content box">
-      <header>
-          <h2 class="secondary-heading">Recently Added Datasets</h2>
+      <header style="margin: 60px 0px 60px 0px;">
+          <h2 class="text-center">Recently Added Datasets</h2>
       </header>
       <section>
-        {% snippet 'homne/snippets/package_list.html', packages=latest_datasets %}
+        {% snippet 'home/snippets/package_list.html', packages=latest_datasets %}
       </section>
+      <div class="col-md-12 col1 text-center" style="margin: 60px 0px 60px 0px;">
+        <a href="#" class="button-green">See All</a>
+      </div>
   </div>

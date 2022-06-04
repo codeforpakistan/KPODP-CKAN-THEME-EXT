@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<!-- <footer class="site-footer">
   <div class="container">
     {% block footer_content %}
       <div class="row">
@@ -32,4 +32,68 @@
       {% include 'snippets/debug.html' %}
     {% endif %}
   {% endblock %}
+</footer> -->
+<section class="newsletter">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="content">
+          <h2>REQUEST FOR DATASET</h2>
+          <p>Just share your email and we'll contact you.</p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email">
+            <span class="input-group-btn">
+              <button class="btn btn-success" type="submit">REQUEST A DATASET</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 footerleft ">
+        <div class="logofooter">
+          <a class="logo" href="{{ h.url_for('home.index') }}"><img style="height:100px!important" src="/images/Logo.svg" srcset="" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+        </div>
+        <p>We help you create a datasets and provides you with the best plan to secure and update all the datasets from around the whole KP.</p>
+      </div>
+      <div class="col-md-4 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7">QUICK LINKS</h6>
+        <ul class="footer-ul">
+          <li><a href="#"> HOME</a></li>
+          <li><a href="#"> DATASETS</a></li>
+          <li><a href="#"> ABOUT US</a></li>
+          <li><a href="#"> BLOG</a></li>
+          <li><a href="#"> FAQs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7">CONTACT US</h6>
+        <div class="post">
+          <p>Feel free to get in touch with us via phone or send us a message.</p>
+          <p class="address"><i class="fa fa-map-pin"></i> Government of Khyber Pakhtunkhwa</p>
+          <p class="address"><i class="fa fa-phone"></i> Phone: +92 091 XXX XXXX</p>
+          <p class="address"><i class="fa fa-envelope"></i> E-mail : <a href="mailto:pmru@kp.gov.pk">pmru@kp.gov.pk</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+<!--footer start from here-->
+
+<div class="copyright">
+  <div class="container">
+    <div class="col-md-6">
+      <p>© Copyright 2022. All Right Reserved </p>
+    </div>
+    <div class="col-md-6">
+      <ul class="bottom_ul">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Condition</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
